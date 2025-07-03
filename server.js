@@ -5,9 +5,7 @@ const httpServer = createServer();
 
 const io = new Server(httpServer, {
   cors: {
-    // Izinkan koneksi dari frontend Vercel Anda.
-    // Ganti dengan domain Vercel Anda setelah deploy, contoh: "https://your-vercel-app.vercel.app"
-    origin: "*", // Untuk pengembangan, Anda bisa menggunakan "*" atau domain frontend Anda
+    origin: "https://everything-is-temporary.vercel.app", 
     methods: ["GET", "POST"]
   }
 });
@@ -38,7 +36,7 @@ io.on("connection", (socket) => {
 });
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 38883;
 httpServer.listen(PORT, () => {
   console.log(`[Socket.IO] Server listening on port ${PORT}`);
 });
